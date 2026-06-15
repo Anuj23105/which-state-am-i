@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Which State Am I? | H2S Mini Challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>🌏 Which State Am I?</h1>
+    <p class="tag">No names. Just culture, food &amp; vibes. Can you guess?</p>
+  </header>
+
+  <main>
+    <section class="card image-card">
+      <div class="img-wrap">
+        <!-- Swap this with your AI-generated image: assets/state.jpg -->
+        <img id="stateImage" src="assets/state.jpg" alt="A mystery state of India — guess it!"
+             onerror="this.classList.add('placeholder');this.alt='Add your AI image at assets/state.jpg';" />
+      </div>
+      <p class="caption">An AI-generated glimpse of my home state's soul.</p>
+    </section>
+
+    <section class="card clues">
+      <h2>🧩 The Clues</h2>
+      <ul>
+        <li>🌊 Home to a thundering horseshoe-shaped forest waterfall, often called the "Niagara of India".</li>
+        <li>🛕 Famous for ancient lost-wax <b>bell-metal (dhokra)</b> art and rich tribal heritage.</li>
+        <li>🌾 Known as a "rice bowl" — endless golden paddy fields.</li>
+        <li>🍚 A humble dish of watery fermented rice with onion &amp; chili is a beloved staple.</li>
+        <li>🥁 Soulful tribal dances and a uniquely long, vibrant Dussehra festival.</li>
+        <li>🧵 Renowned for handwoven <b>kosa (tussar) silk</b>.</li>
+      </ul>
+    </section>
+
+    <section class="card guess">
+      <h2>🤔 Take Your Guess</h2>
+      <div class="guess-row">
+        <input id="guessInput" type="text" placeholder="Type the state name..." autocomplete="off" />
+        <button id="guessBtn">Guess</button>
+      </div>
+      <p id="result" class="result"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for the <b>H2S — Mini Challenge 2</b> 💛 The answer is stored as a one-way hash, so the secret stays secret.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
