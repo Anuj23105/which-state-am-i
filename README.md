@@ -1,5 +1,8 @@
 # 🌏 Which State Am I? — H2S Mini Challenge 2
 
+![CI](https://github.com/Anuj23105/which-state-am-i/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
+
 An interactive web app that captures the **culture, food & vibe** of my home state through an AI-generated image and a set of clues — **without ever naming the state**. Visitors read the clues, view the image, and guess!
 
 🔒 The answer is stored only as a **one-way SHA-256 hash**, so the state name appears nowhere in the code, the page, or the image. The secret stays secret — and the challenge stays fair.
