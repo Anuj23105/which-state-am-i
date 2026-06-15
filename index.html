@@ -3,29 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Guess the Indian state from its culture, food and vibes — no names, just clues and an AI-generated image. A H2S mini challenge." />
+  <meta name="theme-color" content="#2e7d4f" />
   <title>Which State Am I? | H2S Mini Challenge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="hero">
     <h1>🌏 Which State Am I?</h1>
     <p class="tag">No names. Just culture, food &amp; vibes. Can you guess?</p>
   </header>
 
-  <main>
-    <section class="card image-card">
+  <main id="main">
+    <section class="card image-card" aria-labelledby="img-heading">
+      <h2 id="img-heading" class="visually-hidden">Mystery state image</h2>
       <div class="img-wrap">
         <!-- Swap this with your AI-generated image: assets/state.jpg -->
-        <img id="stateImage" src="assets/state.jpg" alt="A mystery state of India — guess it!"
+        <img id="stateImage" src="assets/state.jpg" width="1280" height="720"
+             loading="lazy" decoding="async"
+             alt="An AI-generated landscape of a mystery Indian state: a horseshoe-shaped forest waterfall, paddy fields and tribal artisans."
              onerror="this.classList.add('placeholder');this.alt='Add your AI image at assets/state.jpg';" />
       </div>
       <p class="caption">An AI-generated glimpse of my home state's soul.</p>
     </section>
 
-    <section class="card clues">
-      <h2>🧩 The Clues</h2>
+    <section class="card clues" aria-labelledby="clues-heading">
+      <h2 id="clues-heading">🧩 The Clues</h2>
       <ul>
         <li>🌊 Home to a thundering horseshoe-shaped forest waterfall, often called the "Niagara of India".</li>
         <li>🛕 Famous for ancient lost-wax <b>bell-metal (dhokra)</b> art and rich tribal heritage.</li>
@@ -36,13 +44,16 @@
       </ul>
     </section>
 
-    <section class="card guess">
-      <h2>🤔 Take Your Guess</h2>
-      <div class="guess-row">
-        <input id="guessInput" type="text" placeholder="Type the state name..." autocomplete="off" />
-        <button id="guessBtn">Guess</button>
-      </div>
-      <p id="result" class="result"></p>
+    <section class="card guess" aria-labelledby="guess-heading">
+      <h2 id="guess-heading">🤔 Take Your Guess</h2>
+      <form class="guess-row" id="guessForm" novalidate>
+        <label class="visually-hidden" for="guessInput">Enter the state name</label>
+        <input id="guessInput" name="guess" type="text" inputmode="text"
+               placeholder="Type the state name..." autocomplete="off"
+               aria-describedby="result" />
+        <button id="guessBtn" type="submit">Guess</button>
+      </form>
+      <p id="result" class="result" role="status" aria-live="polite"></p>
     </section>
   </main>
 
@@ -50,6 +61,6 @@
     <p>Built for the <b>H2S — Mini Challenge 2</b> 💛 The answer is stored as a one-way hash, so the secret stays secret.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

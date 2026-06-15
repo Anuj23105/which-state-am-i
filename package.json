@@ -1,0 +1,16 @@
+{
+  "name": "which-state-am-i",
+  "version": "1.0.0",
+  "description": "Guess the Indian state from culture, food and vibes — a H2S mini challenge.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "vitest": "^2.1.8"
+  },
+  "license": "MIT"
+}
